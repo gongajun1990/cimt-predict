@@ -120,9 +120,9 @@ if __name__ == '__main__':
     # modleName='ParallenResNextWithAge'
     modleName = model.__class__.__name__
 
-    num_epochs = 200
+    num_epochs = 100
     # 学习参数
-    lr = 0.00005
+    lr = 0.001
 
     main(TRAIN_DATA_PATH=TRAIN_DATA_PATH, VALID_DATA_PATH=VALID_DATA_PATH, weight_path=weight_path, model=model,
          num_epochs=num_epochs, lr=lr, age_path=age_path,step_size=step_size)

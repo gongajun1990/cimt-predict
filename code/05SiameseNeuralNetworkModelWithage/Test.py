@@ -14,7 +14,7 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import confusion_matrix
 from utilstools.utils import ValidTransform
 from sklearn.metrics import classification_report
-from ModelAndEyeDataset import FltattenResNeXtWithAge, EyeDataset
+from ModelAndEyeDataset import SiameseResNeXtWithAge, EyeDataset
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -41,7 +41,7 @@ def test(test_data_loader):
     return pred, trued, score_list, label_list
 
 
-    t
+
 
 
 def test_model(model, test_loader):
@@ -147,15 +147,15 @@ def run_tests(model, title, image_path, classes1, classes2, save_path='./data', 
 if __name__ == '__main__':
     # Setup and initialize variables
     save_path = r'./data'
-    weight_path = r'FltattenResNeXtWithAgemodel_state_dict_0.8300.pth'
+    weight_path = r'SiameseResNeXtWithAgemodel_state_dict_0.8300.pth'
     image_path = 'H:\eye-cmit'  # Replace with actual path
     classes1 = ["0", "1"]
     classes2 = ["CMIT Normal", "CIMIT Thickened"]
     age_path = './age.xls'
 
-    model = FltattenResNeXtWithAge()
+    model = SiameseResNeXtWithAge()
     title = model.__class__.__name__
-    # model = FltattenResNeXtWithAge()
+    # model = SiameseResNeXtWithAge()
     if torch.cuda.device_count() > 1:
         model = nn.DataParallel(model)
 

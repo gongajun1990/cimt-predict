@@ -37,9 +37,9 @@ class EyeDataset(Dataset):
 
 
 
-class FlattenResNet(nn.Module):
+class SiameseResNet(nn.Module):
     def __init__(self):
-        super(FlattenResNet, self).__init__()
+        super(SiameseResNet, self).__init__()
         base_model = models.resnet50(pretrained=True)
         self.base_layers = nn.Sequential(*list(base_model.children())[:-1])
         print(base_model.fc.in_features * 2)
@@ -54,10 +54,10 @@ class FlattenResNet(nn.Module):
 
 
 
-class FlattenResNeXt(nn.Module):
+class SiameseResNeXt(nn.Module):
 
     def __init__(self):
-        super(FlattenResNeXt, self).__init__()
+        super(SiameseResNeXt, self).__init__()
         base_model = models.resnext50_32x4d(pretrained=True)  # ResNeXt50
         self.base_layers = nn.Sequential(*list(base_model.children())[:-1])
         self.fc = nn.Linear(base_model.fc.in_features * 2, 2)

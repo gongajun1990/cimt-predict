@@ -235,7 +235,7 @@ if __name__ == '__main__':
         model = nn.DataParallel(model)
 
     # 加载模型权重
-    model.load_state_dict(torch.load(r'model_state_dict_0.88001.pth', map_location=device))
+    model.load_state_dict(torch.load(r'model_state_dict_0.8800.pth', map_location=device))
 
     # 将模型设置为评估模式
     model.eval()

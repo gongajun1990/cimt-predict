@@ -48,13 +48,13 @@ class EyeDataset(Dataset):
 
 
 
-class FltattenResNeXtWithAge(nn.Module):
+class SiameseResNeXtWithAge(nn.Module):
     """
     孪生网络模型，使用两个相同的ResNeXt50_32x4d子网络处理左眼和右眼的图像。
     """
 
     def __init__(self):
-        super(FltattenResNeXtWithAge, self).__init__()
+        super(SiameseResNeXtWithAge, self).__init__()
         base_model = models.resnext50_32x4d(pretrained=True)  # 使用ResNeXt50_32x4d
         self.base_layers = nn.Sequential(*list(base_model.children())[:-1])
         # 新增全连接层专门用于处理年龄信息

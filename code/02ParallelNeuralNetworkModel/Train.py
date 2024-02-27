@@ -103,7 +103,7 @@ if __name__ == '__main__':
     modleName=model.__class__.__name__
 
     # training epoch
-    num_epochs = 200
+    num_epochs = 100
     # Learning rate parameter
     lr = 0.001
 

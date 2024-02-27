@@ -18,7 +18,7 @@ from sklearn.metrics import confusion_matrix
 
 from utilstools.utils import ValidTransform
 from sklearn.metrics import classification_report
-from ModelAndEyeDataset import FlattenResNet,FlattenResNeXt,EyeDataset
+from ModelAndEyeDataset import SiameseResNet,SiameseResNeXt,EyeDataset
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -156,7 +156,7 @@ if __name__ == '__main__':
 
 
 
-    model = FlattenResNet()
+    model = SiameseResNet()
     # model = FlattenResNeXt()
     title = model.__class__.__name__
     if torch.cuda.device_count() > 1:
