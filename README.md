@@ -10,12 +10,12 @@ The following are the deep learning models designed in this project:
 
 1. Standard ResNet
 2. Parallel ResNet
-3. Flatten ResNet
+3. Siamese ResNet
 4. Standard ResNext
 5. Parallel ResNeXt
 6. Flatten ResNeXt
 7. Parallel ResNeXt & Age
-8. Flatten ResNext & Age
+8. Siamese ResNext & Age
 
 ## System Requirements
 
